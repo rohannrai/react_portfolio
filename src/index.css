@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+:root {
+  --color-primary: #000;
+  --color-secondary: #a084e8;
+  --color-tertiary: #a084e8;
+  --color-dark: #000;
+  --color-light: #fff;
+  
+  /* RGB values for rgba() usage */
+  --color-primary-rgb: 0, 0, 0;
+  --color-secondary-rgb: 160, 132, 232;
+  --color-tertiary-rgb: 160, 132, 232;
+  --color-light-rgb: 255, 255, 255;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll during animations */
+  min-height: 100vh;
+  position: relative;
+}
+
+body.dark, .dark {
+  --color-primary: #000;
+  --color-secondary: #00ffe7; /* neon cyan accent */
+  --color-tertiary: #00b3ff; /* neon blue for links/buttons */
+  --color-dark: #000;
+  --color-light: #fff;
+  --color-primary-rgb: 0, 0, 0;
+  --color-secondary-rgb: 0, 255, 231;
+  --color-tertiary-rgb: 0, 179, 255;
+  --color-light-rgb: 255, 255, 255;
+  background: #000 !important;
+  color: var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6, .section-title, .text-secondary, .text-tertiary, a, .btn, .btn-outline {
+  color: #fff !important;
+}
+
+.text-light {
+  color: #fff !important;
+}
+
+a {
+  text-decoration: none;
+  color: #a084e8;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Button Styles */
+.btn, .btn-primary {
+  background: #a084e8;
+  color: #fff;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(160, 132, 232, 0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn:hover, .btn-primary:hover {
+  background: #fff;
+  color: #a084e8;
+  box-shadow: 0 4px 16px 0 rgba(160, 132, 232, 0.18);
+}
+
+.btn-outline {
+  border: 2px solid #a084e8;
+  color: #a084e8;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: #a084e8;
+  color: #fff;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-tertiary);
+  position: relative;
+}
+
+body.dark .section-title {
+  color: var(--color-secondary);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 0.25rem;
+  background-color: var(--color-secondary);
+  margin-top: 0.5rem;
+}
+
+/* Section Styling */
+section {
+  padding: 5rem 0;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-light {
+  color: var(--color-light);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .md-grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hidden-sm {
+    display: none;
+  }
+
+  .md-flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Page Flip Animation Styles */
+.page-flip {
+  transform-style: preserve-3d;
+  transform-origin: center left;
+  transition: transform 0.8s ease-in-out;
+  backface-visibility: hidden;
+  will-change: transform; /* Performance optimization for animations */
+}
+
+.page-flip-back {
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+
+/* Make sure 3D effects work properly */
+.perspective-container {
+  perspective: 1000px;
+  overflow: visible;
+}
+
+/* Custom cursor style */
+.custom-cursor {
+  cursor: pointer;
+}
+
+/* Blinking cursor for typewriter effect */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Adjust for mobile view */
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .page-flip {
+    transform-origin: center;
+  }
+  
+  /* Ensure perspective works on mobile devices */
+  .perspective-container {
+    perspective: 800px;
+  }
+  
+  /* Make sure hero section layout adjusts for mobile */
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  /* Fix the navbar on mobile */
+  .hidden-sm {
+    display: none !important;
+  }
+  
+  .md-hidden {
+    display: block !important;
+  }
+
+  /* Improve typography for mobile */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Fix padding and margins for mobile */
+  section {
+    padding: 3rem 0;
+  }
+
+  .mb-8 {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Ensure the page flip animation works properly on mobile */
+  .typewriter-cursor::after {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust button sizes for better mobile touch targets */
+  .btn {
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ensure the mobile menu has proper spacing */
+  .flex {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-wrapper {
+    margin-top: 2.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 2.2rem 1.2rem 1.5rem 1.2rem !important;
+    align-items: center !important;
+    background: radial-gradient(ellipse at 50% 0%, rgba(160,132,232,0.10) 0%, rgba(0,0,0,0.98) 90%);
+    border-radius: 1.5rem;
+    margin: 0 auto;
+    box-shadow: 0 6px 32px 0 rgba(160,132,232,0.13);
+    max-width: 420px;
+  }
+  .hero-text {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .hero-text > * {
+    margin-bottom: 1.2rem !important;
+  }
+  .hero-image {
+    min-width: 0 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 1.7rem !important;
+  }
+  .hero-image > div {
+    width: 120px !important;
+    height: 120px !important;
+    border-width: 3px !important;
+  }
+  .hero-text h1, .hero-text .motion-h1 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.7rem !important;
+  }
+  .hero-text p, .hero-text .motion-p {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+    margin-bottom: 1.1rem !important;
+  }
+  .hero-text .motion-div, .hero-text .motion-div a {
+    font-size: 0.98rem !important;
+    padding: 0.7rem 1.2rem !important;
+    margin-bottom: 0.7rem !important;
+  }
+  .hero-text .motion-div {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    align-items: center !important;
+  }
+  .hero-text .motion-div:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Animated Background */
+.particle {
+  will-change: transform, opacity;
+  filter: blur(1px);
+}
+
+/* Ensure content is above the animated background */
+main, nav, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a subtle gradient overlay to make content more readable */
+main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--color-primary-rgb), 0.97),
+    rgba(var(--color-primary-rgb), 0.99)
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure the background is visible */
+body {
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Make sure the container is visible */
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure the navbar is visible */
+nav {
+  background-color: var(--color-primary);
+  position: relative;
+  z-index: 50;
+}
+
+/* Visualizer Glow */
+#outer-ring circle, #inner-ring circle, .dot {
+  filter: drop-shadow(0 0 12px var(--color-secondary));
+  transition: filter 0.3s;
+}
+
+body.dark #outer-ring circle, body.dark #inner-ring circle, body.dark .dot {
+  filter: drop-shadow(0 0 18px var(--color-secondary));
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .bg-dark {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .skill-card-icon {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .skill-card-text {
+    font-size: 0.95rem !important;
+  }
+}
